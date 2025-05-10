@@ -1,9 +1,18 @@
-import example.pepita
+import autos.*
 
-describe "group of tests for pepita" {
+describe "Autos de Toretto" {
 
-  test "pepita has initial energy" {
-    assert.equals(100, pepita.energy())
+  test "hay 3 autos" {
+    dominic.comprarOConseguirAuto(dodgeCharger)
+    dominic.comprarOConseguirAuto(laFerrari)
+    dominic.comprarOConseguirAuto(flechaRubi)
+    assert.equals(dominic.autos.size(), 3)
   }
 
+  test "hay autos en condiciones" {
+    dominic.comprarOConseguirAuto(dodgeCharger)
+    dominic.comprarOConseguirAuto(laFerrari)
+    dominic.comprarOConseguirAuto(flechaRubi)
+    assert.that(dominic.enCondiciones())
+  }
 }
